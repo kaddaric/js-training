@@ -5,7 +5,13 @@
  * and return the total
  *
  */
-
+function total(tabNb) {
+    let somme = 0;
+    for (let nb of tabNb) {
+        somme += nb;
+    }
+    return somme;
+}
 
 //* Begin of tests
 const assert = require('assert')

@@ -9,7 +9,23 @@
  */
 
 // Your code :
-
+ function multiply(nb1, nb2) {
+     let mutiplication = 0;
+     let fin = 0;
+     if (nb2 < 0){
+        while (fin > nb2) {
+            mutiplication -= nb1;
+            fin--;
+        }
+     } else {
+        while (fin < nb2) {
+            mutiplication += nb1;
+            fin++;
+        }
+     }
+     
+     return mutiplication;
+ }
 //* Begin of tests
 const assert = require('assert')
 
