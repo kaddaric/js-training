@@ -9,6 +9,12 @@
 
 // Your code :
 
+function getFirst(expression){
+    if (typeof expression === 'string'){
+        expression.split('');
+    }
+    return expression[0];
+}
 //* Begin of tests
 const assert = require('assert')
 

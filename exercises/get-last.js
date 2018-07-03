@@ -9,6 +9,13 @@
 
 // Your code :
 
+function getLast(expression){
+    if (typeof expression === 'string'){
+        expression.split('');
+    }
+    return expression[expression.length - 1];
+}
+
 //* Begin of tests
 const assert = require('assert')
 

@@ -9,6 +9,10 @@
 
 // Your code :
 
+function getLength(expression) {
+    return expression.length;
+}
+
 //* Begin of tests
 const assert = require('assert')
 
