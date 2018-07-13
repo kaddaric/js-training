@@ -11,6 +11,90 @@
 
 // Your code :
 
+// function multiply(a, b) {
+//   let somme = 0;
+//   let add;
+
+//   if ((b > 0 && a > 0) || (b < 0 && a < 0)) {
+//     a = Math.abs(a);
+//     b = Math.abs(b);
+//     if (b > 1) {
+//       add += a;
+//       console.log(`+: ${add}`);
+//       b--;
+//       console.log(`b: ${b}`);
+
+//       multiply(a, b);
+//       b === 0 ? b=1 : b=b;
+//     }
+//   }
+
+//   if (b < 0 || a < 0) {
+//     a = Math.abs(a);
+//     b = Math.abs(b);
+//     if (b > 1) {
+//       a += a;
+//       console.log(`somme: ${a}`);
+//       b--;
+//       multiply(a, b);
+//       b === 0 ? b=1 : b=b;
+//     }
+//     a = -a;
+//   }
+
+//   somme = add;
+//   return somme;
+// }
+
+//****************************************************** */
+
+
+function multiply(a, b) {
+  let add = 0;
+
+  function multiplyByAdd() {
+    if ((b > 0 && a > 0) || (b < 0 && a < 0)) {
+      a = Math.abs(a);
+      b = Math.abs(b);
+      if (b > 0) {
+        add += a;
+        b--;
+        multiplyByAdd(a, b);
+        b === 0 ? b = 1 : b = b;
+      }
+    }
+
+    if (b < 0 || a < 0) {
+      a = Math.abs(a);
+      b = Math.abs(b);
+      if (b !== 0 && a !== 0){
+        if (b > 0) {
+          add += a;
+          b--;
+          multiplyByAdd(a, b);
+          b === 0 ? b = 1 : b = b;
+        }
+        add = -add;
+      } else {
+        add = 0;
+      }
+      
+
+    }
+
+    if (a === 0 && b === 0) {
+      console.log(`a: ${a}`);
+      add = 0;
+    }
+    return add;
+  }
+
+  multiplyByAdd(a, b);
+  return add;
+}
+
+
+
 //* Begin of tests
 const assert = require('assert')
 
